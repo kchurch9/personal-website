@@ -5,35 +5,32 @@ import {
   Route,
   Link,
 } from 'react-router-dom'
+var Infinite = require('react-infinite')
 
 const Home = () => (
-  <div>
+    <div class="flex-container">
+      <div>
+          <span>Hello, I'm Ken Church</span>
+        <div>
+          <img src={Ken} alt=""/>
+        </div>  
     
-    <span>Hello I'm Ken Church</span>
     
-      <p>Aspiring Web Developer
-      </p>
-      <div className="profile">
-      <img src={Ken} alt=""/>
-      </div>
-        <article> 
-          Bacon ipsum dolor amet pork venison ribeye sirloin, porchetta corned beef swine biltong pastrami. Doner kielbasa meatball jerky meatloaf capicola pork boudin 
-          rump venison frankfurter shoulder. Prosciutto cow tenderloin, 
-          pork ham hock turducken flank shankle. Shoulder short ribs 
-          pastrami brisket andouille pork pork loin. Porchetta turducken corned beef frankfurter tongue 
-          fatback. Biltong beef ribs short loin frankfurter drumstick meatball picanha andouille tenderloin salami flank shank sirloin. Beef tail ham hock pork loin short loin flank. Cupim biltong shankle tail short loin. Tail pork loin 
-          ball tip venison kevin. Chuck pastrami beef ribs swine flank jerky spare ribs, pig shank short loin venison chicken shankle.
-          Short ribs pastrami brisket boudin. Beef ribs jowl beef, shoulder ground round frankfurter drumstick. Ball tip pork meatball, 
-          pancetta strip steak cow frankfurter. Hamburger bacon picanha burgdoggen filet mignon. Cupim kevin prosciutto sirloin kielbasa rump short loin alcatra swine landjaeger. Sirloin pork belly kielbasa ham. 
-        </article>
-        
-  </div>
+          <p>Aspiring Web Developer</p> 
+    </div>
+        <div className="one"/>
+          <article> 
+          Thank you for visiting! I am very passionate about web-development and learing new skills.
+          I have been on an exciting adventure diving into the world of web-dev, software development, and computer science.
+          I am excited to share what I am capable of and how I can contribute to a team.
+          </article>
+    
+</div>
   
 )
-
 const About = () => (
-  <div>
-   
+  <div className="two">
+   <Infinite containerHeight={200} elementHeight={40}>
     <h2>About</h2>
       <article>
         Biltong beef ribs short loin frankfurter drumstick meatball picanha andouille tenderloin salami flank shank sirloin. Beef tail ham hock pork loin short loin flank. Cupim biltong shankle tail short loin. Tail pork loin 
@@ -45,11 +42,11 @@ const About = () => (
         pancetta strip steak cow frankfurter. Hamburger bacon picanha burgdoggen filet mignon. Cupim kevin prosciutto sirloin kielbasa rump short loin alcatra swine landjaeger. Sirloin pork belly kielbasa ham. 
         pancetta strip steak cow frankfurter. Hamburger bacon picanha burgdoggen filet mignon. Cupim kevin prosciutto sirloin kielbasa rump short loin alcatra swine landjaeger. Sirloin pork belly kielbasa ham. 
       </article>
-  
+    </Infinite>
   </div>
   
 )
-
+  
 const Topic = ({ match }) => (
   <div>
     <h3>{match.params.topicId}</h3>
@@ -57,30 +54,45 @@ const Topic = ({ match }) => (
 )
 
 const Topics = ({ match }) => (
-  <div>
+  <div className="three">
     <h2>Topics</h2>
     <ul>
-      <li>
-        <Link to={`${match.url}/`}>
-          Node.js
-          React
-        </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/about`}>
+      <dl>
+       <button2><Link to={`${match.url}/`}>
+          Technologies
+        </Link> 
+        </button2>
+      </dl>
+      <dl>
+        <button2><Link to={`${match.url}/about`}>
           about
         </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/Helio Stuff`}>
-          Mongo DB
+        </button2>
+      </dl>
+      <dl>
+        <button2>
+        <Link to={`${match.url}/University of Pheonix BS in Information Technology 
+        and Helio Training Bootcamp for Full-Stack Web Development`}>
+          Education
         </Link>
-      </li>
+        </button2>
+      </dl>
     </ul>
 
     <Route path={`${match.url}/:topicId`} component={Topic}/>
     <Route exact path={match.url} render={() => (
-      <h3>Please select a topic.</h3>
+      <h3>
+        <ul>
+          <dl>HTML/CSS</dl>
+          <dl>GIT</dl>
+          <dl>JavaScript/JSON</dl>
+          <dl>React</dl>
+          <dl>NodeJS</dl>
+          <dl>Express</dl>
+          <dl>RESTful APIs</dl>
+          <dl>MongoDB</dl>
+        </ul>
+      </h3>
     )}/>
   </div>
 )
@@ -101,5 +113,6 @@ const BasicExample = () => (
     </div>
   </Router>
 )
+
 
 export default BasicExample
