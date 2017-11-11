@@ -10,13 +10,13 @@ var Infinite = require('react-infinite')
 const Home = () => (
     <div class="flex-container">
       <div>
-          <span>Hello, I'm Ken Church</span>
+          <span class="cursor">Hello, I'm Ken Church</span>
         <div>
           <img src={Ken} alt=""/>
         </div>  
     
     
-          <p>Aspiring Web Developer</p> 
+          <p class="cursor">Aspiring Web Developer</p> 
     </div>
         <div className="one"/>
           <article> 
@@ -30,7 +30,7 @@ const Home = () => (
 )
 const About = () => (
   <div className="two">
-   <Infinite containerHeight={200} elementHeight={40}>
+   
     <h2>About</h2>
       <article>
         Biltong beef ribs short loin frankfurter drumstick meatball picanha andouille tenderloin salami flank shank sirloin. Beef tail ham hock pork loin short loin flank. Cupim biltong shankle tail short loin. Tail pork loin 
@@ -42,7 +42,7 @@ const About = () => (
         pancetta strip steak cow frankfurter. Hamburger bacon picanha burgdoggen filet mignon. Cupim kevin prosciutto sirloin kielbasa rump short loin alcatra swine landjaeger. Sirloin pork belly kielbasa ham. 
         pancetta strip steak cow frankfurter. Hamburger bacon picanha burgdoggen filet mignon. Cupim kevin prosciutto sirloin kielbasa rump short loin alcatra swine landjaeger. Sirloin pork belly kielbasa ham. 
       </article>
-    </Infinite>
+    
   </div>
   
 )
