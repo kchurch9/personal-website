@@ -62,7 +62,7 @@ div {
 }
 
 .two {
-  column-count: 2;
+  column-count: 1;
   column-gap: 40px;
   column-rule-style: double;
   column-rule-width: 1px;
